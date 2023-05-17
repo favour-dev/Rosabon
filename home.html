@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/53fee681d0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+    <title>Home</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
+        *, *:before, *:after {
+            box-sizing: border-box;
+        }
+        .navigation-top{
+            display: flex;
+            flex-direction: row;
+            background-color: blue;
+            justify-content: space-between;
+            padding: 0 0 0 10px;
+            color: white;
+        }
+        .navigation-bar{
+            background-color: rgb(216, 216, 216);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        .navigation-bar a{
+            float: left;
+            color: #160385;
+            text-align: center;
+            padding:15px;
+            text-decoration: none;
+            /* font-size:; */
+        }
+        .navigation-bar .icon{
+            display: none;
+        }
+        .dropdown a:hover{
+            background-color: white;
+        }
+        .dropdown{
+            float: left;
+            /* overflow: hidden; */
+        }
+        .horizontal-dropdown{
+            display: none;
+            position: absolute;
+            top: 17.5%;
+            background-color: #dbdada;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            
+        }
+        .horizontal-dropdown a {
+            float: none;
+            padding: 12px 12px;
+            display: block;
+            text-align: left;
+        }
+        .credit{
+            margin-left: 11px;
+        }
+        .show{
+            display: block;
+        }
+        .side-navigation-bar{
+            display: none;
+            width: 200px;
+            height: 100%;
+            background-color: rgb(216, 216, 216);
+            /* float: left; */
+            /* text-align: center; */
+        }
+        .side-dropdown{
+            padding: 15px 0;
+        }
+        .side-dropdown a{
+            text-decoration:none;
+            margin: 0;
+            padding-left: 15px;
+        }
+        .side-horizontal-dropdown{
+            background-color: whitesmoke;
+            display: none;
+        }
+        .dropdown-icon{
+           float: right;
+           margin-right: 19px;
+        }
+        .list-item{
+            padding: 10px;
+        }
+        .showDropdown {
+            display: block;
+        }
+        .showSidemenu{
+            display: block;
+        }
+        .showTopmenu{
+            display: none;
+        }
+        @media screen  and (max-width:768px){
+            .navigation-bar{
+                display: none;
+            }
+
+            body{
+                font-size: x-small;
+            }
+            .side-navigation-bar{
+                width: 150px;
+            }
+        }
+        @media screen  and (max-width:1024px){
+            body{
+                font-size: x-small;
+            }
+        }
+    </style>
+   
+</head>
+<body>
+    <div class="navigation-top">
+        <div onclick="myMenu()" class="logo">
+            <div><h4><i class="fa fa-th-large" aria-hidden="true"></i> Rosabon ERP</h4></div>
+        </div>
+        <div>
+            <h4>Countdown to Appraisal</h4>
+        </div>
+        <div>
+            <p></p>
+        </div>
+    </div>
+    <div id="top-menu-item" class="navigation-bar">
+        <div class="dropdown">
+            <a onclick="myFunction(this)" href="#">Dashboard <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div id="menu-dropdown" class="horizontal-dropdown">
+                    <a href="form.html">New Booking</a>
+                    <a href="#">View Booking</a>
+                    <a href="#">New Backup Office</a>
+                </div>
+        </div>
+        <div class="dropdown"> 
+            <a onclick="myFunction(this)" href="#"> Intranet <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div id="menu-dropdown" class="horizontal-dropdown credit">
+                    <a href="form.html">New Booking</a>
+                    <a href="#">View Booking</a>
+                    <a href="#">New Backup Office</a>
+                </div> 
+        </div>
+        <div class="dropdown">
+            <a onclick="myFunction(this)" href="#">Treasury <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div id="menu-dropdown" class="horizontal-dropdown">
+                    <a href="form.html">New Booking</a>
+                    <a href="#">View Booking</a>
+                    <a href="#">New Backup Office</a>
+                </div>
+        </div>
+        <div class="dropdown">
+            <a onclick="myFunction(this)" href="#">Accounts <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div id="menu-dropdown" class="horizontal-dropdown">
+                    <a href="#">New Booking</a>
+                    <a href="#">View Booking</a>
+                    <a href="#">New Backup Office</a>
+                </div>
+        </div>
+        <div class="dropdown">
+            <a onclick="myFunction(this)" href="#">Self Service <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div id="menu-dropdown" class="horizontal-dropdown">
+                    <a href="#">New Booking</a>
+                    <a href="#">View Booking</a>
+                    <a href="#">New Backup Office</a>
+                </div>
+        </div>
+        <div class="dropdown">
+            <a onclick="myFunction(this)" href="#">Lead Management <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div id="menu-dropdown" class="horizontal-dropdown">
+                    <a href="#">New Booking</a>
+                    <a href="#">View Booking</a>
+                    <a href="#">New Backup Office</a>
+                </div>
+        </div>
+        <div class="dropdown">
+            <a onclick="myFunction(this)" href="#">Settings <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div id="menu-dropdown" class="horizontal-dropdown">
+                    <a href="#">New Booking</a>
+                    <a href="#">View Booking</a>
+                    <a href="#">New Backup Office</a>
+                </div>
+        </div>
+        <div class="dropdown">
+            <a onclick="myFunction(this)" href="#">Payroll <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div id="menu-dropdown" class="horizontal-dropdown">
+                    <a href="#">New Booking</a>
+                    <a href="#">View Booking</a>
+                    <a href="#">New Backup Office</a>
+                </div>
+        </div>
+        <div class="dropdown">
+            <a onclick="myFunction(this)" href="#">Appraisal <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div id="menu-dropdown" class="horizontal-dropdown">
+                    <a href="#">New Booking</a>
+                    <a href="#">View Booking</a>
+                    <a href="#">New Backup Office</a>
+                </div>
+        </div>
+        <div class="dropdown">
+            <a onclick="myFunction(this)" href="#">Support & FAQs <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div id="menu-dropdown" class="horizontal-dropdown">
+                    <a href="#">New Booking</a>
+                    <a href="#">View Booking</a>
+                    <a href="#">New Backup Office</a>
+                </div>
+        </div>
+        <div class="dropdown">
+            <a onclick="myFunction(this)" href="#">UATs <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div id="menu-dropdown" class="horizontal-dropdown">
+                    <a href="#">New Booking</a>
+                    <a href="#">View Booking</a>
+                    <a href="#">New Backup Office</a>
+                </div>
+        </div>
+    </div>
+    <div id="menu-item" class="side-navigation-bar">
+        <div class="side-dropdown">
+            <a onclick="mySidemenu(this)" href="#"><i class="fa fa-tachometer left-icon" aria-hidden="true"></i>  Dashboard <i class="fa fa-angle-down dropdown-icon" aria-hidden="true"></i></a>
+                <div id="side-menu-dropdown" class="side-horizontal-dropdown">
+                    <div class="list-item"><a href="#">New Booking</a></div>
+                    <div class="list-item"><a href="#">View Booking</a></div>
+                    <div class="list-item"><a href="#">New Backup Office</a></div>
+                </div>
+        </div>
+        <div class="side-dropdown"> 
+            <a onclick="mySidemenu(this)" href="#"><i class="fa fa-suitcase left-icon" aria-hidden="true"></i>  Intranet <i class="fa fa-angle-down dropdown-icon" aria-hidden="true"></i></a>
+                <div id="side-menu-dropdown" class="side-horizontal-dropdown">
+                    <div class="list-item"><a href="#">New Booking</a></div>
+                    <div class="list-item"><a href="#">View Booking</a></div>
+                    <div class="list-item"><a href="#">New Backup Office</a></div>
+                </div> 
+        </div>
+        <div class="side-dropdown">
+            <a onclick="mySidemenu(this)" href="#"><i class="fa fa-usd left-icon" aria-hidden="true"></i>  Treasury <i class="fa fa-angle-down dropdown-icon" aria-hidden="true"></i></a>
+                <div id="side-menu-dropdown" class="side-horizontal-dropdown">
+                    <div class="list-item"><a href="#">New Booking</a></div>
+                    <div class="list-item"><a href="#">View Booking</a></div>
+                    <div class="list-item"><a href="#">New Backup Office</a></div>
+                </div>
+        </div>
+        <div class="side-dropdown">
+            <a onclick="mySidemenu(this)" href="#"><i class="fa fa-money left-icon" aria-hidden="true"></i>  Accounts <i class="fa fa-angle-down dropdown-icon" aria-hidden="true"></i></a>
+                <div id="side-menu-dropdown" class="side-horizontal-dropdown">
+                    <div class="list-item"><a href="#">New Booking</a></div>
+                    <div class="list-item"><a href="#">View Booking</a></div>
+                    <div class="list-item"><a href="#">New Backup Office</a></div>
+                </div>
+        </div>
+        <div class="side-dropdown">
+            <a onclick="mySidemenu(this)" href="#">  <i class="fa fa-smile-o left-icon" aria-hidden="true"></i>  Self Service <i class="fa fa-angle-down dropdown-icon" aria-hidden="true"></i></a>
+                <div id="side-menu-dropdown" class="side-horizontal-dropdown">
+                    <div class="list-item"><a href="#">New Booking</a></div>
+                    <div class="list-item"><a href="#">View Booking</a></div>
+                    <div class="list-item"><a href="#">New Backup Office</a></div>
+                </div>
+        </div>
+        <div class="side-dropdown">
+            <a onclick="mySidemenu(this)" href="#"><i class="fa fa-users left-icon" aria-hidden="true"></i>  Lead Management <i class="fa fa-angle-down dropdown-icon" aria-hidden="true"></i></a>
+                <div id="side-menu-dropdown" class="side-horizontal-dropdown">
+                    <div class="list-item"><a href="#">New Booking</a></div>
+                    <div class="list-item"><a href="#">View Booking</a></div>
+                    <div class="list-item"><a href="#">New Backup Office</a></div>
+                </div>
+        </div>
+        <div class="side-dropdown">
+            <a onclick="mySidemenu(this)" href="#"><i class="fa fa-cog left-icon" aria-hidden="true"></i>  Settings <i class="fa fa-angle-down dropdown-icon" aria-hidden="true"></i></a>
+                <div id="side-menu-dropdown" class="side-horizontal-dropdown">
+                    <div class="list-item"><a href="#">New Booking</a></div>
+                    <div class="list-item"><a href="#">View Booking</a></div>
+                    <div class="list-item"><a href="#">New Backup Office</a></div>
+                </div>
+        </div>
+        <div class="side-dropdown">
+            <a onclick="mySidemenu(this)" href="#"><i class="fa fa-credit-card-alt left-icon" aria-hidden="true"></i>  Payroll <i class="fa fa-angle-down dropdown-icon" aria-hidden="true"></i></a>
+                <div id="side-menu-dropdown" class="side-horizontal-dropdown">
+                    <div class="list-item"><a href="#">New Booking</a></div>
+                    <div class="list-item"><a href="#">View Booking</a></div>
+                    <div class="list-item"><a href="#">New Backup Office</a></div>
+                </div>
+        </div>
+        <div class="side-dropdown">
+            <a onclick="mySidemenu(this)" href="#"><i class="fa fa-bar-chart left-icon" aria-hidden="true"></i>  Appraisal <i class="fa fa-angle-down dropdown-icon" aria-hidden="true"></i></a>
+                <div id="side-menu-dropdown" class="side-horizontal-dropdown">
+                    <div class="list-item"><a href="#">New Booking</a></div>
+                    <div class="list-item"><a href="#">View Booking</a></div>
+                    <div class="list-item"><a href="#">New Backup Office</a></div>
+                </div>
+        </div>
+        <div class="side-dropdown">
+            <a onclick="mySidemenu(this)" href="#"><i class="fa fa-question left-icon" aria-hidden="true"></i>  Support & FAQs <i class="fa fa-angle-down dropdown-icon" aria-hidden="true"></i></a>
+                <div id="side-menu-dropdown" class="side-horizontal-dropdown">
+                    <div class="list-item"><a href="#">New Booking</a></div>
+                    <div class="list-item"><a href="#">View Booking</a></div>
+                    <div class="list-item"><a href="#">New Backup Office</a></div>
+                </div>
+        </div>
+        <div class="side-dropdown">
+            <a onclick="mySidemenu(this)" href="#"><i class="fa fa-user-secret left-icon" aria-hidden="true"></i>  UATs <i class="fa fa-angle-down dropdown-icon" aria-hidden="true"></i></a>
+                <div id="side-menu-dropdown" class="side-horizontal-dropdown">
+                    <div class="list-item"><a href="#">New Booking</a></div>
+                    <div class="list-item"><a href="#">View Booking</a></div>
+                    <div class="list-item"><a href="#">New Backup Office</a></div>
+                </div>
+        </div>
+    </div>
+    <script>
+        function myFunction(a) {
+            a.parentNode.getElementsByClassName("horizontal-dropdown")[0].classList.toggle("show");
+        }
+        function mySidemenu(a) {
+            a.parentNode.getElementsByClassName("side-horizontal-dropdown")[0].classList.toggle("showDropdown");
+        }
+        function myMenu(){
+            document.getElementById("menu-item").classList.toggle("showSidemenu")
+            document.getElementById("top-menu-item").classList.toggle("showTopmenu")
+        }
+        
+
+        
+            
+    </script>
+</body>
+</html>

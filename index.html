@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/53fee681d0.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Rosabon Login Page</title>
+</head>
+<body>
+    <div class="main">
+        <div class="rosabon">
+            <img src="./Images/four_pic-removebg-preview.png" class="square">
+            <h2>Rosabon</h2> 
+        </div>
+        <div class="login">
+            <div class="welcome contain">
+                <img src="./Images/world.png" class="world">
+                <h3>Welcome</h3>
+                <hr>
+            </div>
+            <div>
+                <p id="success">Login Successful</p>
+                <p id="fail">Incorrect Username or Password</p>
+                <p id="required">This is a required field</p>
+            </div>
+            <div class="form contain">
+                <form id="login-form" class="inline">
+                    <div class="input-icon">
+                        <i class="fa fa-envelope-o icon form-icon" aria-hidden="true"></i>
+                        <input type="text" class="username" name="userName" required>
+                    </div>
+                    <div class="input-icon">
+                        <i class="fa fa-asterisk icon form-icon" aria-hidden="true"></i>
+                        <input type="password" class="username" name="passWord" required>
+                    </div>
+                    <div class="input-icon icon">
+                        <i class="fa fa-lock icon submit-icon" aria-hidden="true"></i>
+                        <input id="submit" type="button"class="submit-button" onClick="loginPage(this.form)">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+//         function loginPage(form) {
+//             if (form.userName.value=="username") { 
+//             if (form.passWord.value=="password") {
+//                 alert("Login Successful")              
+//             location="index.html" 
+//             } else {
+//             alert("Incorrect detail Password")
+//             }
+//             } else {  alert("Incorrect detail Username")
+// }
+// }
+        const loginForm = document.getElementById("login-form");
+        const submitButton = document.getElementById("submit");
+
+
+        submitButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            const username = loginForm.userName.value;
+            const password = loginForm.passWord.value;
+
+            if(username === "f.ebebeinwe@gmail.com" && password === "ABC123"){
+                document.getElementById("success").style.display = "block";
+                location="home.html"
+            }
+            else if(username === "username" && password === "password"){
+                document.getElementById("success").style.display = "block";
+                location="home.html"
+            }
+            else if(username === "favour" && password === "ABC123"){
+                document.getElementById("success").style.display = "block";
+                location="home.html"
+            }
+            else if(username === "" && password === ""){
+                document.getElementById("required").style.display = "block";
+            }
+            else {
+                document.getElementById("fail").style.display = "block";
+            } 
+            loginForm.userName.value = ""; 
+            loginForm.passWord.value = "";
+        })
+    </script>
+</body>
+</html>
