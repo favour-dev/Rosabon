@@ -28,16 +28,16 @@
             <div class="form contain">
                 <form id="login-form" class="inline">
                     <div class="input-icon">
-                        <i class="fa fa-envelope-o icon form-icon" aria-hidden="true"></i>
-                        <input type="text" class="username" name="userName" required>
+                        <!-- <i class="fa fa-envelope-o icon form-icon" aria-hidden="true"></i> -->
+                        <input type="text" class="username" name="userName" placeholder="Username" required>
                     </div>
                     <div class="input-icon">
-                        <i class="fa fa-asterisk icon form-icon" aria-hidden="true"></i>
-                        <input type="password" class="username" name="passWord" required>
+                        <!-- <i class="fa fa-asterisk icon form-icon" aria-hidden="true"></i> -->
+                        <input type="password" class="username" name="passWord" placeholder="Password" required>
                     </div>
                     <div class="input-icon icon">
-                        <i class="fa fa-lock icon submit-icon" aria-hidden="true"></i>
-                        <input id="submit" type="button"class="submit-button" onClick="loginPage(this.form)">
+                        <!-- <i class="fa fa-lock icon submit-icon" aria-hidden="true"></i> -->
+                        <input id="submit" value="Login" type="button"class="submit-button" onClick="loginPage(this.form)">
                     </div>
                 </form>
             </div>
@@ -68,7 +68,7 @@
                 document.getElementById("success").style.display = "block";
                 location="home.html"
             }
-            else if(username === "username" && password === "password"){
+            else if(username === "Username" && password === "Password"){
                 document.getElementById("success").style.display = "block";
                 location="home.html"
             }
@@ -78,8 +78,10 @@
             }
             else if(username === "" && password === ""){
                 document.getElementById("required").style.display = "block";
+                document.getElementById("fail").style.display = "none";
             }
             else {
+                document.getElementById("required").style.display = "none";
                 document.getElementById("fail").style.display = "block";
             } 
             loginForm.userName.value = ""; 
