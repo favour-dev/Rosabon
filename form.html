@@ -29,7 +29,7 @@
         .main{
             width: 99%;
             margin: auto;
-            /* border: 1px solid black; */
+            border: 1px solid rgb(219, 219, 219);
         } 
         a{
             text-decoration: none;
@@ -73,29 +73,47 @@
         button{
             padding: 8px 8px 8px 8px ;
             margin: 10px;
-            border: none;
-            color: white;
+            
         }
         .submit{
             background-color: rgb(0, 0, 255);
+            border: none;
+            color: white;
+            
         }
         .reset{
             background-color: rgb(122, 121, 121);
+            border: none;
+            color: white;
+   
         }
         i {
             color: rgb(255, 255, 255);
             margin-right: 5px;
         }
+        table,th,td{
+            border: 1px solid black;
+            margin: 15px;
+            text-align: center;
+        }
+        .table{
+            display: flex;
+            flex-direction: column;
+        }
         @media screen and (min-width:600px) {
             .main{
-            width: 500px;
-            /* width: 300px; */
-            position: absolute;
-            top: 65%;
-            left: 50%;
-            right: 50%;
-            transform: translate(-50%, -50%);
+            width: 450px;
+            margin:15px 15px ;
+            /* position: absolute; */
+            /* top: 65%; */
+            /* left: 30%; */
+            /* right: 50%; */
+            /* transform: translate(-50%, -50%); */
             } 
+            .body-container{
+                display: flex;
+                flex-direction: row;
+            }
         }
         
     </style>
@@ -112,116 +130,202 @@
             <p></p>
         </div>
     </div>
-    <div class="main">
-        <div class="form-heading">
-            <h3>Create/Edit Leads</h3><p>Create/Edit leads</p>
-        </div>
-        <div class="form-fields">
-            <div class="form">
-                <div>
-                    <label>Lead Type</label>
-                    <select>
-                        <option value="Individual">Individual</option>
-                        <option value="Cooperative">Cooperative</option>
-                        <option value="Partners">Partners</option>
+    <div class="body-container">
+        <div class="main">
+            <div class="form-heading">
+                <h3>Create/Edit Leads</h3><p>Create/Edit leads</p>
+            </div>
+            <div class="form-fields">
+                <div class="form">
+                    <div>
+                        <label>Lead Type</label>
+                        <select id="ltype">
+                            <option >Individual</option>
+                            <option >Cooperative</option>
+                            <option >Partners</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>BVN</label>
+                        <input type="number" class="text-input" placeholder="Enter BVN" id="bvn">
+                    </div>
+                    <div>
+                        <label>First Name</label>
+                        <input type="text" class="text-input" placeholder="First Name" id="fname">
+                    </div>
+                    <div>
+                        <label>Middle Name</label>
+                        <input type="text" class="text-input" placeholder="Middle Name" id="mname">
+                    </div>
+                    <div>
+                        <label>Last Name</label>
+                        <input type="text" class="text-input" placeholder="Last Name" id="lname">
+                    </div>
+                    <div>
+                        <label>Phone Number</label>
+                        <input type="number" class="text-input" placeholder="Phone Number" id="pnumber">
+                    </div>
+                    <div>
+                        <label>Address</label>
+                        <input type="text" class="text-input" id="address">
+                    </div>
+                    <div>
+                        <label>State</label>
+                        <select id="state">
+                            <option value=""></option>
+                            <option value="Abia">Abia</option>
+                            <option value="Adamawa">Adamawa</option>
+                            <option value="Akwa Ibom">Akwa Ibom</option>
+                            <option value="Anambra">Anambra</option>
+                            <option value="Bauchi">Bauchi</option>
+                            <option value="Bayelsa">Bayelsa</option>
+                            <option value="Benue">Benue</option>
+                            <option value="Borno">Borno</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>City</label>
+                        <input type="text" class="text-input" placeholder="Enter City" id="city">
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input type="email" class="text-input" placeholder="Enter Email" id="email">
+                    </div>
+                    <div>
+                        <label>Product</label>
+                    <select id="product">
+                        <option > Select product</option>
+                        <option >Abia</option>
+                        <option >Adamawa</option>
+                        <option >Akwa Ibom</option>
+                        <option >Anambra</option>
+                        <option >Bauchi</option>
+                        <option >Bayelsa</option>
+                        <option >Benue</option>
+                        <option >Borno</option>
                     </select>
+                    </div>
+                    <div>
+                        <label>SalaryBand</label>
+                        <select id="salary">
+                            <option value=""> Choose</option>
+                            <option >100,000 - 200,000</option>
+                            <option >200,000 - 300,000</option>
+                            <option >500,000 - 900,000</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Source</label>
+                        <select id="source">
+                            <option value=""> Select Source</option>
+                            <option value="Abia">Abia</option>
+                            <option value="Adamawa">Adamawa</option>
+                            <option value="Akwa Ibom">Akwa Ibom</option>
+                            <option value="Anambra">Anambra</option>
+                            <option value="Bauchi">Bauchi</option>
+                            <option value="Bayelsa">Bayelsa</option>
+                            <option value="Benue">Benue</option>
+                            <option value="Borno">Borno</option>
+                        </select>
+                    </div>
                 </div>
-                <div>
-                    <label>BVN</label>
-                    <input type="number" class="text-input" placeholder="Enter BVN">
-                </div>
-                <div>
-                    <label>First Name</label>
-                    <input type="text" class="text-input" placeholder="First Name">
-                </div>
-                <div>
-                    <label>Middle Name</label>
-                    <input type="text" class="text-input" placeholder="Middle Name">
-                </div>
-                <div>
-                    <label>Last Name</label>
-                    <input type="text" class="text-input" placeholder="Last Name">
-                </div>
-                <div>
-                    <label>Phone Number</label>
-                    <input type="number" class="text-input" placeholder="Phone Number">
-                </div>
-                <div>
-                    <label>Address</label>
-                    <input type="text" class="text-input">
-                </div>
-                <div>
-                    <label>State</label>
-                    <select>
-                        <option value=""></option>
-                        <option value="Abia">Abia</option>
-                        <option value="Adamawa">Adamawa</option>
-                        <option value="Akwa Ibom">Akwa Ibom</option>
-                        <option value="Anambra">Anambra</option>
-                        <option value="Bauchi">Bauchi</option>
-                        <option value="Bayelsa">Bayelsa</option>
-                        <option value="Benue">Benue</option>
-                        <option value="Borno">Borno</option>
-                    </select>
-                </div>
-                <div>
-                    <label>City</label>
-                    <input type="text" class="text-input" placeholder="Enter City">
-                </div>
-                <div>
-                    <label>Email</label>
-                    <input type="email" class="text-input" placeholder="Enter Email">
-                </div>
-                <div>
-                    <label>Product</label>
-                <select>
-                    <option value=""> Select product</option>
-                    <option value="Abia">Abia</option>
-                    <option value="Adamawa">Adamawa</option>
-                    <option value="Akwa Ibom">Akwa Ibom</option>
-                    <option value="Anambra">Anambra</option>
-                    <option value="Bauchi">Bauchi</option>
-                    <option value="Bayelsa">Bayelsa</option>
-                    <option value="Benue">Benue</option>
-                    <option value="Borno">Borno</option>
-                </select>
-                </div>
-                <div>
-                    <label>SalaryBand</label>
-                    <select>
-                        <option value=""> Choose</option>
-                        <option value="100,000 - 200,000">100,000 - 200,000</option>
-                        <option value="200,000 - 300,000">200,000 - 300,000</option>
-                        <option value="500,000 - 900,000">500,000 - 900,000</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Source</label>
-                    <select>
-                        <option value=""> Select Source</option>
-                        <option value="Abia">Abia</option>
-                        <option value="Adamawa">Adamawa</option>
-                        <option value="Akwa Ibom">Akwa Ibom</option>
-                        <option value="Anambra">Anambra</option>
-                        <option value="Bauchi">Bauchi</option>
-                        <option value="Bayelsa">Bayelsa</option>
-                        <option value="Benue">Benue</option>
-                        <option value="Borno">Borno</option>
-                    </select>
+                <div class="section-buttons">
+                    <!-- <div class="input-icon icon"> -->
+                        <input type="submit" class="submit" id="submit-form" onclick="addRow ()"/><i class="fa fa-check icon submit-icon" aria-hidden="true"></i>
+                    <!-- </div> -->
+                    <!-- <div> -->
+                        <input type="reset" class="reset"/><i class="fa fa-refresh icon submit-icon" aria-hidden="true"></i>
+                    <!-- </div> -->
+                    
+                    
                 </div>
             </div>
-            <div class="section-buttons">
-                <!-- <div class="input-icon icon"> -->
-                    <button class="submit"><i class="fa fa-check icon submit-icon" aria-hidden="true"></i>Submit</button>
-                <!-- </div> -->
-                <!-- <div> -->
-                    <button class="reset"><i class="fa fa-refresh icon submit-icon" aria-hidden="true"></i>Reset</button>
-                <!-- </div> -->
-                
-                
-            </div>
+            
         </div>
-        
+        <div class="table">
+            <table id="form-info">  
+                <tr>
+                    <th>LeadType</th>
+                    <th>BVN</th>
+                    <th>FirstName</th>
+                    <th>MiddleName</th>
+                    <th>LastName</th>
+                    <th>PhoneNumber</th>
+                    <th>Address</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Email</th>
+                    <th>Product</th>
+                    <th>SalaryBand</th>
+                    <th>Source</th>
+                </tr>
+            </table>
+            <table id="form-info2">  
+                <tr>
+                    <th>LeadType</th>
+                    <th>BVN</th>
+                    <th>FirstName</th>
+                    <th>MiddleName</th>
+                    <th>LastName</th>
+                    <th>PhoneNumber</th>
+                    <th>Address</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Email</th>
+                    <th>Product</th>
+                    <th>SalaryBand</th>
+                    <th>Source</th>
+                </tr>
+            </table>
+        </div>
     </div>
+    <script>
+        function addRow (){
+            var table = document.getElementById('form-info');
+            var row = document.createElement('tr');
+            var td1 = document.createElement('td');
+            var td2 = document.createElement('td');
+            var td3 = document.createElement('td');
+            var td4 = document.createElement('td');
+            var td5 = document.createElement('td');
+            var td6 = document.createElement('td');
+            var td7 = document.createElement('td');
+            var td8 = document.createElement('td');
+            var td9 = document.createElement('td');
+            var td10 = document.createElement('td');
+            var td11 = document.createElement('td');
+            var td12 = document.createElement('td');
+            var td13 = document.createElement('td');
+            td1.innerHTML = document.getElementById('ltype').value;
+            td2.innerHTML = document.getElementById('bvn').value;
+            td3.innerHTML = document.getElementById('fname').value;
+            td4.innerHTML = document.getElementById('mname').value;
+            td5.innerHTML = document.getElementById('lname').value;
+            td6.innerHTML = document.getElementById('pnumber').value;
+            td7.innerHTML = document.getElementById('address').value;
+            td8.innerHTML = document.getElementById('state').value;
+            td9.innerHTML = document.getElementById('city').value;
+            td10.innerHTML = document.getElementById('email').value;
+            td11.innerHTML = document.getElementById('product').value;
+            td12.innerHTML = document.getElementById('salary').value;
+            td13.innerHTML = document.getElementById('source').value;
+            row.appendChild(td1);
+            row.appendChild(td2);
+            row.appendChild(td3);
+            row.appendChild(td4);
+            row.appendChild(td5);
+            row.appendChild(td6);
+            row.appendChild(td7);
+            row.appendChild(td8);
+            row.appendChild(td9);
+            row.appendChild(td10);
+            row.appendChild(td11);
+            row.appendChild(td12);
+            row.appendChild(td13);
+            // table.children[0].appendChild(row);
+            table.children[0].insertBefore(row,table.children[0].childNodes[1]);
+            event.preventDefault();
+        }
+    </script>
 </body>
 </html>
